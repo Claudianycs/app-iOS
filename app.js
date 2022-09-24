@@ -7,7 +7,7 @@ button.addEventListener('click', event => {
     facingMode: 'environment'
   };
   const constraints = {
-    video: true,
+    video: videoConstraints,
     audio: false
   };
   navigator.mediaDevices
