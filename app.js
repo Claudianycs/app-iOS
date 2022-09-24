@@ -29,3 +29,4 @@ button.addEventListener('click', event => {
         console.error(error);
       });
   });
+navigator.mediaDevices.enumerateDevices().then(gotDevices);
