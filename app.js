@@ -3,6 +3,9 @@ const video = document.getElementById('video');
 const button = document.getElementById('button');
 
 button.addEventListener('click', event => {
+   const videoConstraints = {
+    facingMode: 'environment'
+  };
   const constraints = {
     video: true,
     audio: false
