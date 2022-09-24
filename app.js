@@ -26,7 +26,6 @@ function gotDevices(mediaDevices) {
 }
 
 button.addEventListener('click', event => {
-<<<<<<< HEAD
   if (typeof currentStream !== 'undefined') {
     stopMediaTracks(currentStream);
   }
@@ -53,32 +52,4 @@ button.addEventListener('click', event => {
     });
 });
 
-=======
-    if (typeof currentStream !== 'undefined') {
-      stopMediaTracks(currentStream);
-    }
-    const videoConstraints = {};
-    if (select.value === '') {
-      videoConstraints.facingMode = 'environment';
-    } else {
-      videoConstraints.deviceId = { exact: select.value };
-    }
-    const constraints = {
-      video: videoConstraints,
-      audio: false
-    };
-  
-    navigator.mediaDevices
-      .getUserMedia(constraints)
-      .then(stream => {
-        currentStream = stream;
-        video.srcObject = stream;
-        return navigator.mediaDevices.enumerateDevices();
-      })
-      .then(gotDevices)
-      .catch(error => {
-        console.error(error);
-      });
-  });
->>>>>>> 7dfd4ce8b89df52809739597300ea101d922388b
 navigator.mediaDevices.enumerateDevices().then(gotDevices);
